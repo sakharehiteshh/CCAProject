@@ -6,7 +6,10 @@ const cors = require('cors')//New for microservice
 app.use(cors())//New for microservice
 app.listen(port)
     console.log("Express server is running on port " + port)
-
 app.get('/', (req, res) => {
-    res.send('Microservice Gateway by Niharika Gadhave');
+    res.send('Microservice Gateway by Niharika Gadhave and Hitesh Sakhare');
+
+})
+app.get("/microservice1", (req,res)=>{
+    res.send("microservice 1 result ="+req.query.data)
 })
