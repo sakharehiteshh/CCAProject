@@ -1,0 +1,28 @@
+{
+  "name": "nodejs-express",
+  "version": "1.0.0",
+  "description": "First Express.js App",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js",
+    "start": "node index.js"
+  },
+  "author": "Niharika Gadhave",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/gadhaven1/cca-gadhaven1.git"
+  },
+  "keywords": [
+    "assignment",
+    "nodejs"
+  ],
+  "bugs": {
+    "url": "https://bitbucket.org/gadhaven1/cca-gadhaven1/issues"
+  },
+  "homepage": "https://bitbucket.org/gadhaven1/cca-gadhaven1#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2"
+  }
+}
