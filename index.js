@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+<<<<<<< HEAD
 const zodiac=["Monkey","Rooster","Dog","Pig","Rat","Ox","Tiger","Rabbit","Dragon","Snake","Horse","Goat"];
 const todaysDate = new Date();
 const currentYear = todaysDate.getFullYear(); 
@@ -11,16 +12,27 @@ const age= currentYear-birthyear;
 const zodiac_option=birthyear%12;
 var zodiac_answer = zodiac[zodiac_option];
 var port = process.env.PORT || 8080;
+=======
+var port = process.env.PORT || 8000;
+>>>>>>> d9b394a27b3e25c4c283c23fe9ae515a04dd9d11
 app.use (express.urlencoded ({extended: false}))
 const cors = require('cors')//New for microservice
 app.use(cors())//New for microservice
 app.listen(port)
-    console.log("Express server is running on port " + port)
+    console.log("/Usage: host/Age_ChineseZodiac?year=2000 " + port)
 app.get('/', (req, res) => {
+<<<<<<< HEAD
     res.send("Your age is ",+age,"and chinese zodiac sign is "+zodiac_answer);
     
     
 })
 app.get("/microservice1", (req, res)=>{
     res.send("microservice 1 result ="+req.query.data)
+=======
+    res.send('You are 21 year olds and you are a Dragon');
+
+})
+app.get("/Usage: host/Age_ChineseZodiac?year=2000", (req,res)=>{
+    res.send("You are 21 year olds and you are a Dragon ="+req.query.data)
+>>>>>>> d9b394a27b3e25c4c283c23fe9ae515a04dd9d11
 })
