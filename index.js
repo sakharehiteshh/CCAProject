@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 8000;
 app.use (express.urlencoded ({extended: false}))
 const cors = require('cors')//New for microservice
 app.use(cors())//New for microservice
