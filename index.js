@@ -11,5 +11,5 @@ app.get('/', (req, res) => {
 
 })
 app.get("/Usage: host/Age_ChineseZodiac?year=2000", (req,res)=>{
-    res.send(" You are 21 year olds and you are a Dragon ="+req.query.data)
+    res.send("You are 21 year olds and you are a Dragon ="+req.query.data)
 })
