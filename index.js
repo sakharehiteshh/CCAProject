@@ -17,7 +17,7 @@ app.use(cors())//New for microservice
 app.listen(port)
     console.log("Express server is running on port " + port)
 app.get('/', (req, res) => {
-    res.send("Your age is ",+age,"and chinese zodiac sign is "+zodiac_answer);
+    res.send("Your age is "+age+"and chinese zodiac sign is "+zodiac_answer);
     
     
 })
