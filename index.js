@@ -10,9 +10,6 @@ app.get('/', (req, res) => {
     res.send('Microservice Gateway by Niharika Gadhave and Hitesh Sakhare. Usage: host/Age_ChineseZodiac?year=xxxx');
 
 })
-app.use(cors())
-app.listen(port)
-    console.log("Usage: host/Age_ChineseZodiac?year=2000" + port)
 app.get("/Usage: host/Age_ChineseZodiac?year=2000", (req,res)=>{
     res.send("You are 21 year olds and you are a Dragon ="+req.query.data)
 })
