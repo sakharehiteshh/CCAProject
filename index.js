@@ -6,9 +6,9 @@ const currentYear = todaysDate.getFullYear();
 var url_string = "https://8080-52491bb9-3324-4286-8aa3-7600199969fe.cs-us-east1-pkhd.cloudshell.dev/?authuser=2/?birthyear=birthyear"; //window.location.href
 var url = new URL(url_string);
 var c = url.searchParams.get("birthyear");
-const birthyear = c;
-const age= currentYear-birthyear;
-const zodiac_option=birthyear%12;
+var birthyear = c;
+var age= currentYear-birthyear;
+var zodiac_option=birthyear%12;
 var zodiac_answer = zodiac[zodiac_option];
 var port = process.env.PORT || 8080;
 app.use (express.urlencoded ({extended: false}))
