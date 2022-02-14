@@ -3,7 +3,7 @@ const app = express()
 const zodiac=["Monkey","Rooster","Dog","Pig","Rat","Ox","Tiger","Rabbit","Dragon","Snake","Horse","Goat"];
 const todaysDate = new Date();
 const currentYear = todaysDate.getFullYear(); 
-var url_string = window.location.href;
+var url_string = window.location.search;
 var url = new URL(url_string);
 var c = url.searchParams.get("birthyear");
 console.log(c);
