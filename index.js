@@ -11,5 +11,5 @@ app.get('/', (req, res) => {
 
 })
 app.get("/microservice1", (req,res)=>{
-    res.send("microservice 1 result ="+req.query.data)
+    res.send("Niharika's Birthday: 29 May 1999 & Hitesh's Birthday: 05 April 1998  ="+req.query.data)
 })
