@@ -6,6 +6,7 @@ const currentYear = todaysDate.getFullYear();
 var url_string = "https://8080-52491bb9-3324-4286-8aa3-7600199969fe.cs-us-east1-pkhd.cloudshell.dev/?authuser=2/?birthyear="; //window.location.href
 var url = new URL(url_string);
 var c = url.searchParams.get("birthyear");
+console.log(c);
 var birthyear = parseInt(c);
 var age= currentYear-birthyear;
 var zodiac_option=birthyear%12;
@@ -18,6 +19,7 @@ app.listen(port)
     console.log("Express server is running on port " + port)
 app.get('/', (req, res) => {
     res.send("Your age is "+age+" and chinese zodiac sign is "+zodiac_answer);
+    res.send (c);
     
     
 })
