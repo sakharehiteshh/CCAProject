@@ -4,7 +4,7 @@ const zodiac=["Monkey","Rooster","Dog","Pig","Rat","Ox","Tiger","Rabbit","Dragon
 const todaysDate = new Date();
 const currentYear = todaysDate.getFullYear(); 
 function getParameter(birthyear){
-    let parameters = new URLSearchParams(<script>window.location.search</script>);
+    let parameters = new URLSearchParams(<html><script>window.location.search</script></html>);
     parameters.get(birthyear);
 }
 var c = getParameter("birthyear");
