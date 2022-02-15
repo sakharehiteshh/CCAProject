@@ -3,9 +3,11 @@ const app = express()
 const zodiac=["Monkey","Rooster","Dog","Pig","Rat","Ox","Tiger","Rabbit","Dragon","Snake","Horse","Goat"];
 const todaysDate = new Date();
 const currentYear = todaysDate.getFullYear(); 
-var url_string = "https://8080-52491bb9-3324-4286-8aa3-7600199969fe.cs-us-east1-pkhd.cloudshell.dev/?authuser=2&birthyear=1998" //window.location.href
-var url = new URL(url_string);
-var c = url.searchParams.get("birthyear");
+function getParameter(birthyear){
+    let parameters = new URLSearchParams(window.location.search);
+    parameters.get(birthyear);
+}
+var c = getParameter("birthyear");
 var birthyear = parseInt(c);
 var age= currentYear-birthyear;
 var zodiac_option=birthyear%12;
