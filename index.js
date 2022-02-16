@@ -6,7 +6,7 @@ const currentYear = todaysDate.getFullYear();
 var url_string = "https://8080-52491bb9-3324-4286-8aa3-7600199969fe.cs-us-east1-pkhd.cloudshell.dev/?authuser=2&birthyear=1995" //window.location.href
 var url = new URL(url_string);
 let text = "Microservice 1 Gateway by Niharika Gadhave and Hitesh Sakhare";
-let result = text.link("https://8080-52491bb9-3324-4286-8aa3-7600199969fe.cs-us-east1-pkhd.cloudshell.dev/?authuser=2&Age_ChineseZodiac?birthyear=xxxx");
+let result = text.link("https://cca-gadhaven1-sakhareh1.azurewebsites.net/&Age_ChineseZodiac?birthyear=xxxx");
 var c = url.searchParams.get("birthyear");
 var birthyear = parseInt(c);
 var age= currentYear-birthyear;
