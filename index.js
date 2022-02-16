@@ -4,8 +4,9 @@ const zodiac=["Monkey","Rooster","Dog","Pig","Rat","Ox","Tiger","Rabbit","Dragon
 const todaysDate = new Date();
 const currentYear = todaysDate.getFullYear(); 
 var url_string = "https://8080-52491bb9-3324-4286-8aa3-7600199969fe.cs-us-east1-pkhd.cloudshell.dev/?authuser=2&birthyear=1998" //window.location.href
-const urlParams = new URLSearchParams(window.location.search);
-const birthyear = urlParams.get('birthyear');
+var url = new URL(url_string);
+var c = url.searchParams.get("birthyear");
+var birthyear = parseInt(c);
 var age= currentYear-birthyear;
 var zodiac_option=birthyear%12;
 var zodiac_answer = zodiac[zodiac_option];
