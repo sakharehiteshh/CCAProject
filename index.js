@@ -13,8 +13,8 @@ app.get("/microservice1", (req, res)=>{
     var birthMonth;
     var printmonth;
     var printsoulSymbol;
-    const soulSymbol=["Dragon","Phoenix","Yin-Yang","Lion","Wolf","Fish","Fire","Horse","Flower","Star","Tree","Water"];
-    const month=["January","February","March","April","May","June","July","August","September","October","November","December"];
+    var soulSymbol=["Dragon","Phoenix","Yin-Yang","Lion","Wolf","Fish","Fire","Horse","Flower","Star","Tree","Water"];
+    var month=["January","February","March","April","May","June","July","August","September","October","November","December"];
     if (birthMonth==req.query.birthMonth){
       printmonth=month[birthMonth - 1];
       printsoulSymbol=soulSymbol[birthMonth - 1];
