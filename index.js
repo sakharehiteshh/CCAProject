@@ -18,5 +18,9 @@ app.get('/Age_ChineseZodiac', function (req, res) {
     var age= currentYear-birthyear;
     var zodiac_option=birthyear%12;
     var zodiac_answer = zodiac[zodiac_option];
+    
+    app.get('/', (req, res) => {
+        res.send("Your age is "+age+" and chinese zodiac sign is "+zodiac_answer);  
+    })
     res.send(result)
 });
