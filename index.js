@@ -13,12 +13,12 @@ app.get('/Age_ChineseZodiac', function (req, res) {
     const zodiac=["Monkey","Rooster","Dog","Pig","Rat","Ox","Tiger","Rabbit","Dragon","Snake","Horse","Goat"];
     const todaysDate = new Date();
     const currentYear = todaysDate.getFullYear();
-    var url_string = "Age_ChineseZodiac?year=xxxx"
+    var url_string = "https://8080-52491bb9-3324-4286-8aa3-7600199969fe.cs-us-east1-pkhd.cloudshell.dev/Age_ChineseZodiac?year="
     var url = new URL(url_string);    
     var c = url.searchParams.get("year");
-    var birthyear = parseInt(c);
-    var age= currentYear-birthyear;
-    var zodiac_option=birthyear%12;
+    var year = parseInt(c);
+    var age= currentYear-year;
+    var zodiac_option=year%12;
     var zodiac_answer = zodiac[zodiac_option];
     app.get('/', (req, res) => {
         res.send("Your age is "+age+" and chinese zodiac sign is "+zodiac_answer);  
