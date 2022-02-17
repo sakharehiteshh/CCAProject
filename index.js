@@ -13,7 +13,7 @@ app.get('/Age_ChineseZodiac', function (req, res) {
     const zodiac=["Monkey","Rooster","Dog","Pig","Rat","Ox","Tiger","Rabbit","Dragon","Snake","Horse","Goat"];
     const todaysDate = new Date();
     const currentYear = todaysDate.getFullYear();
-    var c = res.send.get("year");
+    var c = app.get("year");
     var birthyear = parseInt(c);
     var age= currentYear-birthyear;
     var zodiac_option=birthyear%12;
