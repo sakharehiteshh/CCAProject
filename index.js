@@ -7,7 +7,7 @@ app.use(cors())//New for microservice
 app.listen(port ,() =>
     console.log(`Express server is running on port " :${port}`))
 app.get('/', (req, res) => {
-    res.send("Microservice1 gateway by Niharika Gadhave and Hitesh Sakhare");  
+    res.send("Microservice1 gateway by Niharika Gadhave and Hitesh Sakhare Usage:host/microservice1?birthMonth=X");  
 })
 app.get("/microservice1", (req, res)=>{
     var birthMonth;
