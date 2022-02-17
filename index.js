@@ -3,6 +3,8 @@ const app = express()
 var port = process.env.PORT || 8080 
 //app.use(express.static('static'))
 app.use (express.urlencoded ({extended: false}))
+const cors = require('cors')//New for Microservice
+app.use(cors())//New for Microservice
 app.listen(port, () => 
     console.log(`Express server is running on port :${port}`))
 app.get('/', (req, res) => {
