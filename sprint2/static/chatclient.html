@@ -54,7 +54,7 @@
             $(".login-page").hide();
             $(".chat").show();
             alert(account.username+" logged in succesfully!, Enjoy our webchat application");
-            setCurrentUser(account)
+            //setCurrentUser(account)
             socketio.emit("userlist")
         });
         socketio.on("userlist",(userlist) => { 
@@ -83,10 +83,10 @@
         })
 
         function register(){
-            var username = $("#addusername").val();
-            var fullname = $("#addfullname").val();
-            var password = $("#addpassword").val();
-            var email = $("#addemail").val();
+            var username = $("#newusername").val();
+            var fullname = $("#fullname").val();
+            var password = $("#newpassword").val();
+            var email = $("#newemail").val();
             if (username.length < 5 || password.length < 5 ) {
                 alert("Too short! Please select your UserName or Password with atleast 4 characters!");
             }
