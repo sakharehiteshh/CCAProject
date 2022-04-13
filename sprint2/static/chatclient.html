@@ -202,15 +202,9 @@
         <br>
         <div class="wrapper" style="padding-left: 20px;background-color: lightgrey;border-radius: 10px;">
             <div id="menubar">
-            <canvas id="analog-clock" width="150" height="150" ></canvas>
-            <p >
-                <ul id="memberlist" style="box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109),
-                0 1px 1px rgba(128, 128, 128, 0.155),
-                0 2.1px 2.1px rgba(128, 128, 128, 0.195),
-                0 4.4px 4.4px rgba(128, 128, 128, 0.241),
-                0 12px 12px rgba(128, 128, 128, 0.35);
-                box-sizing: border-box;
-                border-radius: 10px;">
+            <canvas id="analog-clock" width="150" height="150" style="margin-top: 20px;"></canvas>
+            <p>
+                <ul id="memberlist">
 
                 </ul>
             </p>
@@ -218,31 +212,31 @@
             <div id="main">
                 <div class="login-page">
                     <div class="form">
-                        <div class="register-form" style="border: inset;display: none; align-items: center; flex-direction: column;">
+                    <div class="register-form" style="padding-left: 375px;">
                             <h1>Sign up Page</p></h1>
                             <label><strong>&nbsp;&nbsp;&nbsp;&nbsp;Full Name:</strong></label>
-                            <input type="text"  id="fullname"/><br>
+                            <input type="text"  id="fullname" style="border-radius: 8px;"/><br>
                             <label><strong>&nbsp;&nbsp;&nbsp;&nbsp;Username:</strong></label>
-                            <input type="text" id="newusername"/><br>
+                            <input type="text" id="newusername" style="border-radius: 8px;"/><br>
                             <label><strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Email:</strong></label>
-                            <input type="text"  id="newemail"/><br>
+                            <input type="text"  id="newemail" style="border-radius: 8px;"/><br>
                             <label><strong>New Password:</strong></label>
-                            <input type="password" id="newpassword"/><br>
-                            <div class="button" onclick="register()" style="margin-left: 85px;">Sign Up</div>
+                            <input type="password" id="newpassword" style="border-radius: 8px;"/><br>
+                            <div class="button" onclick="register()" style="margin-left: 250px;">Sign Up</div>
                             <p class="message"> Already registered? <a href="#" onclick="$('.login-form').show();$('.register-form').hide()"> Log in </a></p>
-                        </div>
+                    </div>
                     <div class="login-form" style="border: inset;display: flex; align-items: center; flex-direction: column;;">
 
                         <h1>Login Window</h1>
 
                         <div class="user">
                             <p style="display: inline;">Username :</p>
-                            <input type="text" placeholder=" " required id="username"/>
+                            <input type="text" placeholder=" " required id="username" style="border-radius: 8px;"/>
                         </div>
                         
                         <div>
                             <p style="display: inline;">Password :</p>
-                            <input type="password" placeholder=" " required/ id="password"/>
+                            <input type="password" placeholder=" " required/ id="password" style="border-radius: 8px;"/>
                         </div>
                     
                     <div class="button" onclick="login()"> Tap to login</div>
