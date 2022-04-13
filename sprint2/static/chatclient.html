@@ -4,8 +4,31 @@
   <meta charset="utf-8">
   <title>CCA-WebChat Application- Niharika Santosh Gadhave</title>
   <style>
+    .top {
+    border-radius: 15px;
+    background-color: #4ca3c1;
+    color: #ffffff;
+    padding: 15px;
+    box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109),
+    0 1px 1px rgba(128, 128, 128, 0.155),
+    0 2.1px 2.1px rgba(128, 128, 128, 0.195),
+    0 4.4px 4.4px rgba(128, 128, 128, 0.241),
+    0 12px 12px rgba(128, 128, 128, 0.35);
+    box-sizing: border-box;
+    border-radius: 10px;
+    }
+    .wrapper {
+    box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109),
+    0 1px 1px rgba(128, 128, 128, 0.155),
+    0 2.1px 2.1px rgba(128, 128, 128, 0.195),
+    0 4.4px 4.4px rgba(128, 128, 128, 0.241),
+    0 12px 12px rgba(128, 128, 128, 0.35);
+    box-sizing: border-box;
+    border-radius: 10px;
+    }
+
     .button {
-      background-color: rgb(8, 119, 119); /* Green */
+      background-color: #4ca3c1;
       border: none;
       color: white;
       padding: 5px;
@@ -15,12 +38,13 @@
       font-size: 12px;
       margin: 4px 2px;
       cursor: pointer;
+      border-radius: 5px;
     }
-    .round {border-radius: 8px;}
-    #response {background-color: #ff9800;} /* Orange */
+    .round {border-radius: 5px;}
+    #response {background-color: #b2e4f7;} 
 
    .form button:hover,.form button:active,.form button:focus {
-  background: #43A047;
+  background: #4ca3c1;
 }
 .form .register-form {
   display: none;
@@ -28,7 +52,31 @@
 .chat {
    display: none; 
 }
-
+.login-form{
+    background-color: #b2e4f7;
+    margin: 8px;
+    padding: 17px;
+    box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109),
+    0 1px 1px rgba(128, 128, 128, 0.155),
+    0 2.1px 2.1px rgba(128, 128, 128, 0.195),
+    0 4.4px 4.4px rgba(128, 128, 128, 0.241),
+    0 12px 12px rgba(128, 128, 128, 0.35);
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+.register-form{
+    background-color: #b2e4f7;
+    margin: 7px;
+    display: block;
+    padding: 13px;
+    box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109),
+    0 1px 1px rgba(128, 128, 128, 0.155),
+    0 2.1px 2.1px rgba(128, 128, 128, 0.195),
+    0 4.4px 4.4px rgba(128, 128, 128, 0.241),
+    0 12px 12px rgba(128, 128, 128, 0.35);
+    box-sizing: border-box;
+    border-radius: 10px;
+}
   </style>
   <link rel="stylesheet" href=https://udayton-cloud.bitbucket.io/style1.css>
   <script src="https://udayton-cloud.bitbucket.io/clock.js"></script>
@@ -150,7 +198,7 @@
             <div id="main">
                 <div class="login-page">
                     <div class="form">
-                        <div class="register-form" style="border: inset; padding-left: 652px;">
+                        <div class="register-form" style="border: inset;display: flex; align-items: center; flex-direction: column;">
                             <h1>Sign up Page</p></h1>
                             <label><strong>&nbsp;&nbsp;&nbsp;&nbsp;Full Name:</strong></label>
                             <input type="text"  id="fullname"/><br>
