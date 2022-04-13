@@ -25,6 +25,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.3",
     "mongodb": "^4.5.0",
+    "node": "^17.7.2",
     "socket.io": "^2.3.0",
     "superagent": "^7.1.2"
   }
