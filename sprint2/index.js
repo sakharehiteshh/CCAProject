@@ -26,8 +26,6 @@ app.get("/chatbot", (req,res)=>{
 })
 
 
-
-
 function signup(account,callback){
     superagent.post('https://cca-team16-mschatdatabase.herokuapp.com/signup/')
     .send(account)
@@ -44,8 +42,8 @@ function login(username,password, callback){
     superagent.get(`https://cca-team16-mschatdatabase.herokuapp.com/login/${username}/${password}`)
     .end((err, res) => {
         console.log(res.body,err)
-        if (res.body.status==="authenticated"){
-        return callback(true,null,res.body.profile);
+        if (res.body.status==="found"){
+        return callback(true,null,res.body.account);
         }else
         callback(false,res.body.message,null);
         }
@@ -98,7 +96,8 @@ io.on('connection', (socketclient) => {
        socketclient.on("login", (username,password) => {
             console.log(`Debug> Login data: ${username}/${password}`);
             login(username,password,(authenticated,message,account)=>{
-            if (authenticated){
+            //console.log(authenticated,message,account);
+                if (authenticated){
             socketclient.authenticated=true;
             socketclient.username=account.username; 
             socketclient.profile=account
