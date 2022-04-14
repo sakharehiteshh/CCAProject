@@ -94,7 +94,7 @@ io.on('connection', (socketclient) => {
         });
 
        socketclient.on("login", (username,password) => {
-            console.log(`Debug> Login data: ${username}/${password}`);
+            console.log(`-pr> Login data: ${username}/${password}`);
             login(username,password,(authenticated,message,account)=>{
             //console.log(authenticated,message,account);
                 if (authenticated){
