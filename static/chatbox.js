@@ -153,8 +153,8 @@ function displayFriendMessage(username, message) {
     if ($("#chatbox_" + username).length == 0) {
         renderChatbox(username, friendFullname);
         rearrangeChatbox();
-        //trigger_requestChatHistory(username); //version 2
-        //return;
+        trigger_requestChatHistory(username); //version 2
+        return;
     }
     var user_chatbox = $("#chatbox_" + username);
 
@@ -304,7 +304,7 @@ $(document).on('click', '#sidebar-user-box', function () {
     }
     renderChatbox(username, fullname);
     rearrangeChatbox();
-    //trigger_requestChatHistory(username); //version 2
+    trigger_requestChatHistory(username); //version 2
 });
 
 $(document).on('click', '.close', function () {
