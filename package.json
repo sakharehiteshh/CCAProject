@@ -7,25 +7,26 @@
     "test": "node index.js",
     "start": "node index.js"
   },
-  "author": "Niharika Gadhave",
-  "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/gadhaven1/cca-gadhaven1.git"
+    "url": "git+https://bitbucket.org/gadhaven1/cca-gadhaven1.git"
   },
   "keywords": [
-    "assignment",
-    "nodejs"
+    "git",
+    "repo"
   ],
+  "author": "Niharika Santosh Gadhave",
+  "license": "ISC",
   "bugs": {
     "url": "https://bitbucket.org/gadhaven1/cca-gadhaven1/issues"
   },
   "homepage": "https://bitbucket.org/gadhaven1/cca-gadhaven1#readme",
   "dependencies": {
     "cors": "^2.8.5",
-    "express": "^4.17.3",
-    "heroku": "^7.59.2",
-    "in": "^0.19.0",
-    "terminal": "^0.1.4"
+    "express": "^4.18.1",
+    "mongodb": "^4.5.0",
+    "node": "^17.7.2",
+    "socket.io": "^2.3.0",
+    "superagent": "^7.1.3"
   }
 }
