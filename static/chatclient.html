@@ -281,6 +281,11 @@
             updateUserList(userlist) 
             
             });
+            
+        socketio.on("chatbot_response", (message, userlist) => {
+            displayFriendMessage("iChatBot",message, userlist)
+            
+            });
 
 
         socketio.on("login-failed",(message) => {
@@ -288,9 +293,19 @@
         });
 
         function sendPrivateChat(receiver, message,currentUser){ 
+            console.log("sendPrivatechat", receiver,message,currentUser)
+            if(message.length == 0) return;
+
+            if(receiver == "iChatBot"){
+                socketio.emit("chatbot_req", message);
+            }
+            else{
+
             socketio.emit("privatechat",receiver,message, currentUser);
+            }
         }
-         socketio.on("privatechat",(sender,message) => { 
+         socketio.on("privatechat",(sender,message) => {
+            console.log("senderPrivatechat", sender,message) 
              displayFriendMessage(sender,message)
         })
 
