@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="utf-8">
-  <title>CCA-WebChat Application- Niharika Santosh Gadhave</title>
+  <title>CCA-WebChat Application </title>
   <style>
     .top {
     border-radius: 15px;
@@ -56,6 +56,7 @@
     background-color: #b2e4f7;
     margin: 8px;
     padding: 17px;
+    border-color: #031d1d52;
     box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109),
     0 1px 1px rgba(128, 128, 128, 0.155),
     0 2.1px 2.1px rgba(128, 128, 128, 0.195),
@@ -265,7 +266,7 @@
             $(".login-page").hide();
             $(".chat").show();
             alert(account.username+" logged in succesfully!, Enjoy our webchat application");
-            setCurrentUser(user)
+            setCurrentUser(account)
             socketio.emit("userlist")
         });
         socketio.on("userlist",(userlist) => { 
@@ -359,8 +360,8 @@
         box-sizing: border-box;
         border-radius: 10px;
             "">
-            <h1 style="text-align: center;">Cloud Computing and Applications - WebChat Project using Authentication</h1>
-            <h2 style="text-align: center;">By Niharika Santosh Gadhave & Hitesh Vilas Sakhare</h2>
+            <h1 style="text-align: center; font-family: initial; text-shadow: 1px 1px rgb(0 0 0);">Cloud Computing and Applications - WebChat Project using Authentication</h1>
+            <h2 style="text-align: center; text-shadow: 1px 1px rgb(0 0 0);">By Niharika Santosh Gadhave & Hitesh Vilas Sakhare</h2>
             <!-- <div id="email" onclick="showhideEmail()" style="text-align: right;">Show my email</div>
             <script src="email.js"></script> -->
             <div id = "top1" > </div>
@@ -386,7 +387,8 @@
                             <input type="text"  id="newemail" style="border-radius: 8px;"/><br>
                             <label><strong>New Password:</strong></label>
                             <input type="password" id="newpassword" style="border-radius: 8px;"/><br>
-                            <div class="button" onclick="register()" style="margin-left: 250px;">Sign Up</div>
+                            <div class="button" onclick="register()" style="margin-left: 250px; border: solid;
+                            border-color: #031d1d52;">Sign Up</div>
                             <p class="message"> Already registered? <a href="#" onclick="$('.login-form').show();$('.register-form').hide()"> Log in </a></p>
                     </div>
                     <div class="login-form" style="border: inset;display: flex; align-items: center; flex-direction: column;;">
@@ -400,10 +402,11 @@
                         
                         <div>
                             <p style="display: inline;">Password :</p>
-                            <input type="password" placeholder=" " required/ id="password" style="border-radius: 8px;"/>
+                            <input type="password" placeholder=" " required/ id="password" style="border-radius: 8px; margin-right: -5px;"/>
                         </div>
                     
-                    <div class="button" onclick="login()"> Tap to login</div>
+                    <div class="button" onclick="login()" style="border: solid;
+                    border-color: #031d1d52;"> Tap to login</div>
                     <div class = "waiting"> <p class = "message">Logging in.. Please wait for a moment....</p> 
                         <div class = "loader"> 
                         </div> 
@@ -422,8 +425,9 @@
             <div class="chat">
               <h1>Online Chat Window</h1>  
             Type your Chat message: <input name="data" onkeypress="checkEnter(event)"
-                                onkeyup="socketio.emit('typing')" id="data"> 
-                <input class="button round" type="button" value="Send" onclick="send()">
+                                onkeyup="socketio.emit('typing')" id="data" style="border-radius: 10px;"> 
+                <input class="button round" type="button" value="Send" style="border: solid;
+                border-color: #031d1d52;" onclick="send()">
                 <div id="typing"></div>
                 <div id="typinganimation"> 
                     <div class="ticontainer"> 
@@ -465,13 +469,33 @@
     function checkEnter(event){
     if (event.keyCode == 13) send();
 }
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
+// function openForm() {
+//   document.getElementById("myForm").style.display = "block";
+// }
 
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
+// function closeForm() {
+//   document.getElementById("myForm").style.display = "none";
+// }
+function requestChatHistory(receiver){
+    socketio.emit("chathistory"
+,receiver, currentUser);
 }
+socketio.on("chathistory",(result) => {
+    if(result.length > 0){
+        console.log(result)
+             for(let idx in result){
+                chat = result[idx];
+//TODO: validate, debug to ensure you get what you expected!!
+if(chat.sender==currentUser){ //Friend message
+    displaySelfMessage(chat.receiver,chat.message);
+
+}else { //Your message
+displayFriendMessage(chat.sender,chat.message);
+}
+}
+    }
+    
+         })
 </script>
 </body>
 </html>

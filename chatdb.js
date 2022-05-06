@@ -20,28 +20,10 @@ module.exports.storePrivateMessage = (receiver,  sender, message, timestamp, cal
                 });
     
     }
-    // module.exports.loadPrivateMessage = (sender,receiver, callback) => {
-    // //TODO: validate the data, query the database collection, and
-    // //return the results via the callback function
-    // const user1 = sender
-    // const user2 = receiver
-    // const cursor = dbClient.db().collection("chatDB").find({
-    // $or:[ {sender:user1, receiver:user2},
-    // {sender:user2, receiver:user1}]
-    // }).sort({timestamp:1}).limit(100)
-    
-    // cursor.toArray((err,result)=>{
-    //             if(err){
-    //                return callback(false)
-    //             }
-    //                 return  callback(result)
-    //         })
-    
-    // }
+   
     module.exports.loadPrivateMessage = (sender, receiver, callback) => {
     
-        //var chat_history = [];
-        // const db = dbClient.db();
+        
         const user1 = sender
         const user2 = receiver
         const cursor = dbClient.db().collection("chatdb").find({
@@ -56,23 +38,4 @@ module.exports.storePrivateMessage = (receiver,  sender, message, timestamp, cal
                             return  callback(result)
                     })
                 }
-    //     db.collection("chatDB").find({ $or:[{sender: user1, receiver: user2}, 
-    //         {sender: user2, receiver: user1}]}).sort({timestamp:-1}).limit(100).toArray((err, result) =>
-    //     {
-    //         if(err){
-    //             console.log(`Chat history between ${sender} and ${receiver} not found!`);
-    //             return callback("Error occured, when trying to find Chat History.");            
-    //         }
-    //         else if(!result){
-    //             return callback("No chat history.");
-    //         }        
-    //         else{
-    //             console.log(`Chat history between ${sender} and ${receiver} found in chatdb!`);
-    //             chat_history = result.reverse();
-    //             //console.log(`Chat History in chatdb: `, chat_history);
-    
-    //             return callback(result);
-                
-    //         }
-    //     })
-    // }
+   

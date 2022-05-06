@@ -9,7 +9,7 @@
    }
    
    .msg_head{ 
-        background:forestgreen;
+        background:#4ca3c1;
         color:white;
         padding:8px;
         font-weight:bold;
@@ -29,8 +29,8 @@
    .msg_input{
         width:100%;
         height: 40px;
-        border: 1px solid #DDDDDD;
-        border-top:1px solid #DDDDDD;
+        border: 1px solid lightgrey;
+        border-top:1px solid lightgrey;
         -webkit-box-sizing: border-box; 
         -moz-box-sizing: border-box;   
         box-sizing: border-box;  
@@ -49,7 +49,7 @@
    }
    .msg-left{
         position:relative;
-        background:#e2e2e2;
+        background:lightgrey;
         padding:5px;
         min-height:10px;
         margin-bottom:5px;
@@ -72,15 +72,23 @@
    
     #chat-sidebar {
         width: 200px;
-        position: fixed;
+        position: inherit;
         height: 100%;
         /*right: 0px;
         top: 0px;*/
+        margin-left: -20px;
         padding-top: 5px;
         padding-bottom: 10px;
-        border-radius: 5px;
-        background:white;
-        box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+        margin-right: 10px;
+        border-radius: 10px;
+        background:lightgrey;
+        border: solid;
+        border-color: #031d1d52;
+        box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109),
+    0 1px 1px rgba(128, 128, 128, 0.155),
+    0 2.1px 2.1px rgba(128, 128, 128, 0.195),
+    0 4.4px 4.4px rgba(128, 128, 128, 0.241),
+    0 12px 12px rgba(128, 128, 128, 0.35);
     }
     #sidebar-user-box {
         padding: 4px;
