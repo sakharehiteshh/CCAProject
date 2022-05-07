@@ -145,7 +145,8 @@ io.on('connection', (socketclient) => {
                sender,message); 
                }
            }
-                       }else{
+                       }
+                       else{
                            console.log("chat not stored")
                        }
                    })

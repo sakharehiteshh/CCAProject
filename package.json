@@ -22,6 +22,7 @@
   },
   "homepage": "https://bitbucket.org/gadhaven1/cca-gadhaven1#readme",
   "dependencies": {
+    "axios": "^0.27.2",
     "cors": "^2.8.5",
     "cross-fetch": "^3.1.5",
     "express": "^4.18.1",

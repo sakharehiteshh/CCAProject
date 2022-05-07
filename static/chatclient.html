@@ -246,7 +246,9 @@
         var socketio = io();
     </script>
     <script>
- 
+    function requestChatHistory(sender){
+            socketio.emit("load", sender);    
+        }
     function login(){
             var username = $("#username").val();
             var password = $("#password").val();
@@ -485,7 +487,7 @@ socketio.on("chathistory",(result) => {
         console.log(result)
              for(let idx in result){
                 chat = result[idx];
-//TODO: validate, debug to ensure you get what you expected!!
+
 if(chat.sender==currentUser){ //Friend message
     displaySelfMessage(chat.receiver,chat.message);
 
@@ -496,6 +498,8 @@ displayFriendMessage(chat.sender,chat.message);
     }
     
          })
+
+         
 </script>
 </body>
 </html>
