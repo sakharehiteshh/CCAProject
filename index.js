@@ -46,8 +46,8 @@ function login(username,password, callback){
     superagent.get(`https://cca-team16-mschatdatabase.herokuapp.com/login/${username}/${password}`)
     .end((err, res) => {
         console.log(res.body,err)
-        if (res.body.status==="authenticated"){
-        return callback(true,null,res.body.profile);
+        if (res.body.status==="found"){
+        return callback(true,null,res.body.account);
         }else
         callback(false,res.body.message,null);
         }
@@ -248,7 +248,8 @@ io.on('connection', (socketclient) => {
                     }
                     console.log(`messageJson - `,messageJson)
         
-                    chathistory.storePrivateMessage(messageJson);
+                    chathistory.storePrivateMessage(messageJson)
+                
         
                     query({"inputs": {
                         "text": message
