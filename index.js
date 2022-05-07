@@ -176,8 +176,16 @@ io.on('connection', (socketclient) => {
 
         socketclient.on("privatechat" , 
         (receiver,message, sender) => {
+            console.log("privatechat:",receiver,message, sender)
+            var messageJson = {
+                "sender": sender,
+                "receiver": receiver,
+                "message": message,
+                "timestamp": Date.now()
+            }
             var timestamp = Date.now()
-                chathistory.storePrivateMessage(receiver,  sender, message, timestamp, (response)=>{
+                chathistory.storePrivateMessage(messageJson, (response)=>{
+                    console.log(response);
                     if(response){
                         var sockets = io.sockets.sockets;
        

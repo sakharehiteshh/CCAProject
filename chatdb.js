@@ -11,13 +11,15 @@ dbClient.connect(err => {
 module.exports.storePrivateMessage = (msgJson)=>{
     //TODO: validate the data and insert to the database collection
     var {receiver, sender, message, timestamp} =msgJson;
-    console.log( receiver, sender, message, timestamp)
+    console.log("storePrivateMessge:", receiver, sender, message, timestamp)
     const db = dbClient.db();
     try {
         //db.products.insertOne( { item: "card", qty: 15 } );
         db.collection("chatdb").insertOne({"receiver":receiver, "sender":sender,"message": message, "timestamp":timestamp});
+        return true
     } catch (e) {
         console.log("storeProvateMessage:" + e);
+        return false        
      };
     }
     // module.exports.loadPrivateMessage = (sender,receiver, callback) => {
