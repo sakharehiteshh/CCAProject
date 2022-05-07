@@ -61,100 +61,6 @@ if(socketclient && socketclient.authenticated){
 socketclient.emit(event,message);
 }
 }}
-<<<<<<< HEAD
- 
- 
- 
-io.on('connection', (socketclient) => {
-   console.log('A new client is connected!');
-   var onlineClients = Object.keys(io.sockets.sockets).length;
-   var welcomemessage = `${socketclient.id} is connected! Number of connected clients: ${onlineClients}`
-   io.emit("online", welcomemessage);
-   socketclient.on("message", (data) => {
-       console.log('Data from a client: ' + data);
-       BroadcastAuthenticatedClients("message", `${socketclient.id} says: ${data}`);
-       });
-       socketclient.on("typing", () => {
-       console.log('Someone is typing...');
-       BroadcastAuthenticatedClients("typing", `${socketclient.id} is typing ...`);
-       });
-       socketclient.on('disconnect', () => {
-       var onlineClients = Object.keys(io.sockets.sockets).length;
-       var byemessage = `${socketclient.id} is disconnected! Number connected clients: ${onlineClients}`;
-       console.log(byemessage);
-       // BroadcastAuthenticatedClients("online", byemessage);
-       var sockets = io.sockets.sockets;
-           let onlineUsers = new Map();
-           for (var id in sockets){
-               const socketclient = sockets[id];
-               if(socketclient && socketclient.authenticated && socketclient.profile){
-                   onlineUsers.set(socketclient.username,socketclient.profile); } }
-                   let onlineUsersJSON = [];
-                   onlineUsers.forEach((value,key)=>{
-                   onlineUsersJSON.push(value); });
-                   for (var id in sockets){
-                       const socketclient = sockets[id];
-                       if(socketclient && socketclient.authenticated && socketclient.profile){
-                           socketclient.emit("update", onlineUsersJSON); } }
-       });
- 
-      socketclient.on("login", (username,password) => {
-           console.log(`-pr> Login data: ${username}/${password}`);
-           login(username,password,(authenticated,message,account)=>{
-           //console.log(authenticated,message,account);
-               if (authenticated){
-           socketclient.authenticated=true;
-           socketclient.username=account.username;
-           socketclient.profile=account
-           socketclient.emit("authenticated", account);
-           console.log(`Debug> ${username} is authenticated and logged in successfully`);
-           var sockets = io.sockets.sockets;
-           let onlineUsers = new Map();
-           for (var id in sockets){
-               const socketclient = sockets[id];
-               if(socketclient && socketclient.authenticated && socketclient.profile){
-                   onlineUsers.set(socketclient.username,socketclient.profile); } }
-                   let onlineUsersJSON = [];
-                   onlineUsers.forEach((value,key)=>{
-                       onlineUsersJSON.push(value); });
-                       console.log(onlineUsersJSON)
-                       for (var id in sockets){
-                           const socketclient = sockets[id];
-                           if(socketclient && socketclient.authenticated && socketclient.profile){
-                               socketclient.emit("userlist", onlineUsersJSON);
-                           }
-                       }
- 
-               }else{
-                   socketclient.emit("login-failed",message);
-                   console.log(`Debug> Login failed: ${username}/${password}`);
-                   }
-               })
-           });
- 
-           socketclient.on("privatechat" , 
-           (receiver,message, sender) => {
-               var timestamp = Date.now()
-                   chathistory.storePrivateMessage(receiver,  sender, message, timestamp, (response)=>{
-                       if(response){
-                           var sockets = io.sockets.sockets;
-          
-           
-           for (var id in sockets){ 
-           let socketclient = sockets[id]; 
-           if(socketclient && socketclient.authenticated && 
-               socketclient.username==receiver){ 
-               socketclient.emit("privatechat" ,
-               sender,message); 
-               }
-           }
-                       }
-                       else{
-                           console.log("chat not stored")
-                       }
-                   })
-                   })
-=======
 
 
 
@@ -367,7 +273,6 @@ io.on('connection', (socketclient) => {
                 });
                 
             })
->>>>>>> 655ada34b71baedb7e80425cf097870fd5d54d4b
    
         
         socketclient.on("register", (user) => {
